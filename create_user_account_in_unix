@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# set variable USER_NAME as hc66
+USER_NAME=hc66
+
+# set variable ret as false
+ret=false
+
+# getent passwd fetch list of user accounts on Unix System
+# >/dev/null redirects the command standard output to the null device
+# File descriptor 1 is stdout
+# File descriptor 2 is stderr
+# >& Indicate redirect to a file descriptor not a file
+# 2>&1 means redirect stderr to stdout 
+getent passwd $USER_NAME >/dev/null 2>&1 && ret=true
+
